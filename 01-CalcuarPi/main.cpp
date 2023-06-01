@@ -21,7 +21,6 @@ double CalculoPi(){
 int main(){
     cout<<setprecision(6)<<fixed;
     //cout<<"PI= "<< PI <<"\t PI/4= "<<  (PI/4) << endl;
-    //CalculoPi();
     cout<<"Pi=\t"<< CalculoPi() << endl;
     return 0;
 }
