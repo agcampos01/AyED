@@ -1,24 +1,26 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
-long double CalculoPi(){
+static double PI = 3.141592;
+
+double CalculoPi(){
     int n=0;
     int x=0;
-    long double dato=0;
-    long double aux;
-    for(int i=1; i<5000000 ;i++){
-        x = n % 2 ? -1 : 1;     //si el exponente es par x = 1, si es impar x = -1
-        aux = 2*n+1;
-        dato += x / aux;    //Uso aux porque no me funciona de esta forma --> dato += x / (2*n+1);
+    double dato=0;
+    for(int i=1; i<1000000 ;i++){
+        x = n % 2 ? -1 : 1;                  //si el exponente es par x = 1, si es impar x = -1
+        dato += x / (double)(2*n+1);
         n++;
-        //cout<< i <<"\t"<< dato*4 << endl;
     }
+    //cout<<"Iteraciones: "<< n+1 <<"\tDato: "<< dato << endl;
     return dato*4;
 }
 
 int main(){
-    cout.precision(7);
+    cout<<setprecision(6)<<fixed;
+    //cout<<"PI= "<< PI <<"\t PI/4= "<<  (PI/4) << endl;
     //CalculoPi();
     cout<<"Pi=\t"<< CalculoPi() << endl;
     return 0;
